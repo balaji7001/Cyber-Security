@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CS &amp; AI Security Mastery Roadmap</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0f1117;color:#e2e8f0;min-height:100vh}
+.page{max-width:1300px;margin:0 auto;padding:2rem 1rem}
+.hero{text-align:center;margin-bottom:2rem}
+.hero h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+.hero p{color:#94a3b8;font-size:.9rem;max-width:680px;margin:0 auto .75rem}
+.order-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:.75rem}
+.order-pill{background:#1e2330;border:1px solid #2d3448;border-radius:20px;padding:3px 12px;font-size:11px;color:#94a3b8;display:flex;align-items:center;gap:5px}
+.order-pill .num{background:#334155;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#cbd5e1;flex-shrink:0}
+.domain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin-bottom:1.5rem}
+.domain-btn{background:#1a1f2e;border:1.5px solid #2d3448;border-radius:12px;padding:14px 12px;cursor:pointer;text-align:left;transition:all .2s;width:100%;outline:none}
+.domain-btn:hover{border-color:#475569;background:#1e2535;transform:translateY(-2px)}
+.domain-btn.active{border-width:2px}
+.domain-icon{font-size:22px;margin-bottom:7px;display:block}
+.domain-label{font-size:13px;font-weight:700;color:#e2e8f0;line-height:1.3}
+.domain-count{font-size:10px;color:#64748b;margin-top:3px}
+.panel{background:#1a1f2e;border:1px solid #2d3448;border-radius:16px;padding:1.5rem;margin-bottom:1.5rem}
+.ph{display:flex;align-items:flex-start;gap:12px;margin-bottom:1.25rem;border-bottom:1px solid #2d3448;padding-bottom:1.25rem}
+.pt{font-size:19px;font-weight:700;color:#f1f5f9}
+.ps{font-size:11.5px;color:#64748b;margin-top:3px}
+.sec-label{font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .6rem;padding-left:6px;border-left:3px solid #334155}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:9px;margin-bottom:.5rem}
+.tc{background:#0f1117;border-radius:10px;padding:.9rem 1rem;border:1px solid #1e2535;transition:all .15s}
+.tc:hover{border-color:#334155;transform:translateY(-1px);background:#111827}
+.tn{font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:3px}
+.td{font-size:11px;color:#64748b;line-height:1.55;margin-bottom:5px}
+.badge{display:inline-block;font-size:9.5px;padding:2px 8px;border-radius:20px;margin-bottom:5px;font-weight:600}
+.subtags{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}
+.st{background:#1e2535;border:1px solid #2d3448;border-radius:5px;font-size:9.5px;color:#8b9ab0;padding:2px 6px}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:9px}
+.cc{background:#0f1117;border-radius:10px;padding:.9rem;border:1px solid #1e2535}
+.cn{font-size:22px;font-weight:800;opacity:.6;margin-bottom:3px}
+.cm{font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:4px}
+.cd{font-size:11px;color:#64748b;line-height:1.5}
+.footer{text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid #1e2535;font-size:12px;color:#475569}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <h1>CS &amp; AI Security Mastery Roadmap</h1>
+    <p>Complete structured path from Python to AI Security — 8 domains, every concept mapped in detail.</p>
+    <div class="order-bar" id="ob"></div>
+  </div>
+  <div class="domain-grid" id="dg"></div>
+  <div id="panels"></div>
+  <div id="capstone"></div>
+  <div class="footer">Click any domain to expand its full concept tree &nbsp;·&nbsp; Built for deep, structured mastery</div>
+</div>
+<script>
+var B='Beginner',I='Intermediate',A='Advanced';
+var LC={Beginner:{c:'#22c55e',bg:'rgba(34,197,94,0.12)'},Intermediate:{c:'#f59e0b',bg:'rgba(245,158,11,0.12)'},Advanced:{c:'#ef4444',bg:'rgba(239,68,68,0.12)'}};
+var domains=[
+{id:'python',icon:'ti-brand-python',label:'Python Mastery',color:'#3b82f6',bg:'rgba(59,130,246,0.1)',order:1,sections:[
+  {t:'Foundations',topics:[
+    {n:'Python History & Setup',l:B,d:'Origins 1991 by Guido van Rossum, PEP process, CPython, pyenv, venv, pip',s:['Guido van Rossum 1991','Python 2 vs Python 3','PEP 8 Style Guide','PEP 20 Zen of Python','CPython interpreter','pyenv version manager','venv virtual environments','pip package manager','requirements.txt','conda environments']},
+    {n:'IDE Setup',l:B,d:'VS Code, PyCharm, Jupyter setup with linting, formatting, debugging extensions',s:['VS Code + Python extension','PyCharm Community','Jupyter Notebook','Jupyter Lab','Black formatter','Pylint / Flake8','mypy type checker','debugpy debugger','launch.json config','PYTHONPATH settings']},
+    {n:'Python Execution Model',l:B,d:'Source to bytecode, CPython interpreter, GIL, memory management, reference counting',s:['Source .py to .pyc bytecode','CPython interpreter','PyPy JIT compiler','GIL (Global Interpreter Lock)','Reference counting','Garbage collector (cyclic)','Memory heap','Stack frames','dis module (bytecode)','inspect module']},
+    {n:'Variables & Data Types',l:B,d:'Dynamic typing, all built-in types, scope rules (LEGB), type hints and annotations',s:['Dynamic typing','int / float / complex','str (immutable)','bool (True/False)','bytes / bytearray','NoneType','LEGB scope rule','global / nonlocal keyword','Type hints PEP 484','typing module']},
+    {n:'Operators & I/O',l:B,d:'All operators including walrus, input/output functions, f-strings, format methods',s:['Arithmetic + - * / // % **','Comparison == != < > <= >=','Logical and or not','Bitwise & | ^ ~ << >>','Walrus := operator','input() function','print() sep= end=','f-strings (PEP 498)','.format() method','Operator precedence']},
+    {n:'Naming & Comments',l:B,d:'PEP 8 conventions, docstrings, inline comments, naming rules for all identifiers',s:['snake_case variables','PascalCase classes','SCREAMING_SNAKE constants','_private prefix','__dunder__ methods','Inline # comments','"""Docstrings"""','Google/NumPy style docs','help() function','Sphinx autodoc']},
+  ]},
+  {t:'Control Flow',topics:[
+    {n:'Conditionals',l:B,d:'if/elif/else branching, ternary expressions, match-case structural pattern matching (3.10+)',s:['if / elif / else','Ternary x if c else y','Truthy/Falsy values','None/0/empty are falsy','match statement (3.10+)','case literal pattern','case sequence pattern','case mapping pattern','case guard (if)','case wildcard _']},
+    {n:'Loops',l:B,d:'for and while loops, range/enumerate/zip, loop-else clause, break/continue/pass',s:['for item in iterable','range(start,stop,step)','enumerate()','zip() / zip_longest()','while condition:','while-else / for-else','break / continue / pass','Infinite loop pattern','Nested loops','List comprehension']},
+  ]},
+  {t:'Functions',topics:[
+    {n:'Function Basics',l:B,d:'def keyword, parameters types, return values, docstrings, first-class functions',s:['def keyword','Positional args','Keyword args','Default values','*args tuple','**kwargs dict','Keyword-only after *','Positional-only with /','return statement','First-class object']},
+    {n:'Lambda & HOF',l:B,d:'Lambda functions, map/filter/reduce, functools.partial, operator module',s:['lambda x: expression','map(func, iterable)','filter(func, iterable)','functools.reduce','functools.partial','operator.attrgetter','operator.itemgetter','sorted(key=lambda)','Single expression limit','When to prefer def']},
+    {n:'Closures & Decorators',l:I,d:'Free variables, nonlocal, factory functions, @decorator syntax, functools.wraps, stacking',s:['Free variables','Enclosing scope','nonlocal keyword','Factory functions','@decorator syntax','functools.wraps','Preserving __name__','Stacking decorators','Class as decorator','@staticmethod / @classmethod']},
+    {n:'Recursion',l:I,d:'Base case, recursive case, call stack depth, memoization with lru_cache',s:['Base case','Recursive case','Call stack depth','RecursionError','sys.setrecursionlimit','@functools.lru_cache','functools.cache','Fibonacci example','Tower of Hanoi','Tail recursion note']},
+  ]},
+  {t:'Data Structures',topics:[
+    {n:'Strings',l:B,d:'Immutable sequences, slicing, all string methods, f-strings, encoding, regex basics',s:['Slicing [start:stop:step]','split() / join() / strip()','upper/lower/title/capitalize','find() / index() / replace()','startswith() / endswith()','f-strings','encode/decode UTF-8','re module basics','String interning','str.translate()']},
+    {n:'Lists & Tuples',l:B,d:'Mutable lists with comprehensions, sorting; immutable tuples, packing/unpacking, namedtuple',s:['append/extend/insert/pop','sort() vs sorted()','List comprehension','Shallow vs deep copy','Tuple packing/unpacking','*extended unpacking','Single-element tuple (x,)','namedtuple','typing.NamedTuple','List vs Tuple performance']},
+    {n:'Sets & Dicts',l:B,d:'Unordered sets for deduplication, dict CRUD, comprehensions, Counter, defaultdict, ChainMap',s:['set add/remove/discard','union | intersection & difference -','frozenset','Set comprehension','dict literal {} / dict()','get() with default','dict comprehension','collections.defaultdict','collections.Counter','collections.OrderedDict','dict |= merge (3.9+)']},
+    {n:'Stack & Queue',l:I,d:'LIFO/FIFO implementations using deque, queue.Queue for threads, heapq priority queue',s:['list as stack (append/pop)','collections.deque','deque appendleft/popleft','queue.Queue (thread-safe)','queue.PriorityQueue','heapq.heappush/heappop','Min-heap / Max-heap','BFS with queue','DFS with stack','asyncio.Queue']},
+    {n:'Linked List',l:I,d:'Node-based linear structure, singly/doubly/circular, common operations and cycle detection',s:['Node class (val + next)','Singly linked list','Doubly linked list','Circular linked list','Insert at head/tail','Delete by value','Reverse a linked list','Floyd cycle detection','Merge sorted lists','O(1) insert at head']},
+    {n:'Trees & Graphs',l:A,d:'Binary search tree, AVL, heap, trie; graph BFS/DFS, Dijkstra, topological sort',s:['Binary Search Tree','BST insert/search/delete','AVL rotations','Heap (heapq module)','Trie insert/search','Inorder/Preorder/Postorder','Level-order (BFS)','Graph adjacency list','BFS / DFS','Dijkstra shortest path','Topological sort','Union-Find (DSU)']},
+  ]},
+  {t:'OOP',topics:[
+    {n:'Classes & Objects',l:I,d:'Class definition, instantiation, instance vs class attributes, self, __dict__, vars()',s:['class keyword','__init__ method','self parameter','Instance attributes','Class attributes','__dict__','vars()','Object identity (is)','Object equality (==)','__slots__ optimization']},
+    {n:'Pillars of OOP',l:I,d:'Encapsulation, Abstraction, Inheritance, Polymorphism with Python-specific details',s:['@property getter/setter','_protected / __private naming','ABC & @abstractmethod','Single inheritance','Multiple inheritance','super() call','MRO (C3 linearization)','Duck typing','Method overriding','@functools.singledispatch']},
+    {n:'Magic Methods',l:A,d:'Dunder methods for built-in behaviour: repr, comparison, arithmetic, context, iteration',s:['__str__ / __repr__','__eq__ / __ne__ / __lt__','__add__ / __mul__ / __len__','__getitem__ / __setitem__','__contains__','__iter__ / __next__','__enter__ / __exit__','__call__','__new__ vs __init__','functools.total_ordering']},
+    {n:'SOLID Principles',l:A,d:'Five design principles: SRP, OCP, LSP, ISP, DIP with Python examples',s:['SRP: Single Responsibility','OCP: Open/Closed','LSP: Liskov Substitution','ISP: Interface Segregation','DIP: Dependency Inversion','Dependency injection','Abstract dependencies','Composition over inheritance','Small focused classes','SOLID refactoring examples']},
+  ]},
+  {t:'Advanced Python',topics:[
+    {n:'Generators & Iterators',l:A,d:'yield, generator expressions, send/throw/close, yield from; __iter__/__next__, itertools',s:['yield keyword','Generator function','Generator expression','next() / StopIteration','send() / throw() / close()','yield from delegation','__iter__ / __next__','iter() builtin','itertools.chain/cycle/count','itertools.groupby/product/combinations']},
+    {n:'Context Managers',l:A,d:'with statement, __enter__/__exit__, contextlib.contextmanager, ExitStack, async with',s:['with statement','__enter__ return value','__exit__(exc_type,val,tb)','contextlib.contextmanager','contextlib.suppress','contextlib.ExitStack','Nested with statements','File context manager','DB transaction pattern','async with']},
+    {n:'Concurrency',l:A,d:'Threading for I/O-bound, Multiprocessing for CPU-bound, Asyncio event-loop',s:['threading.Thread','Lock / RLock / Semaphore','ThreadPoolExecutor','GIL limits CPU threading','multiprocessing.Process','Pool.map / Pool.starmap','ProcessPoolExecutor','async def / await','asyncio.run / create_task / gather','aiohttp async HTTP']},
+    {n:'Metaclasses',l:A,d:'Classes that create classes, type() 3-arg form, ABCMeta, Singleton, class registries',s:['type() 3-arg form','Metaclass __new__/__init__','ABCMeta','Singleton via metaclass','Class registry pattern','__init_subclass__','__class_getitem__','dataclasses @dataclass','attrs library','Protocols (structural typing)']},
+  ]},
+  {t:'Databases & APIs',topics:[
+    {n:'SQL Databases',l:I,d:'sqlite3, psycopg2, pymysql — CRUD, parameterized queries, transactions, connection pools',s:['sqlite3.connect()','cursor.execute()','Parameterized queries ?/%s','fetchone/fetchall','commit()/rollback()','Transaction context manager','psycopg2 (PostgreSQL)','pymysql (MySQL)','Connection pool','CREATE/INSERT/UPDATE/DELETE/SELECT']},
+    {n:'ORM',l:I,d:'SQLAlchemy declarative models, relationships, sessions, Alembic migrations',s:['SQLAlchemy declarative_base','Column types','relationship() / ForeignKey','Session.add/commit/query','filter() / filter_by()','Lazy vs eager loading','Alembic migrations','Django ORM Models','Django migrations','queryset API']},
+    {n:'FastAPI & Flask',l:I,d:'FastAPI async framework with Pydantic; Flask WSGI with blueprints and Jinja2',s:['FastAPI @app.get/post','Path/Query/Body params','Pydantic BaseModel','Dependency injection','Auto OpenAPI/Swagger','HTTPException','Flask @app.route','Flask blueprints','request / jsonify','Gunicorn/Uvicorn deploy']},
+    {n:'JWT & OAuth2',l:I,d:'Stateless auth with JWT, OAuth2 authorization code + PKCE, refresh token pattern',s:['JWT header.payload.sig','HS256 / RS256 signing','exp / iat / sub claims','PyJWT / python-jose','OAuth2 Authorization Code','PKCE flow','Client Credentials','Access token / Refresh token','Bearer header','Scope-based access']},
+  ]},
+  {t:'Testing & Security',topics:[
+    {n:'Testing',l:I,d:'unittest, pytest fixtures and parametrize, mocking with unittest.mock, coverage',s:['unittest.TestCase','setUp / tearDown','pytest def test_','@pytest.fixture','@pytest.mark.parametrize','conftest.py','unittest.mock.Mock','MagicMock / patch()','side_effect / return_value','coverage.py --report']},
+    {n:'Secure Coding & Crypto',l:A,d:'Input validation, Bandit scanner, cryptography library, Fernet, hashlib, secrets',s:['Input validation','Parameterized queries (SQLi fix)','secrets module (random)','Bandit static analysis','Safety (CVE in deps)','Avoid eval/exec','hashlib SHA-256','HMAC authentication','cryptography.fernet Fernet','PBKDF2 / bcrypt / argon2']},
+    {n:'Sockets & Scapy',l:A,d:'TCP/UDP socket programming, raw sockets, Scapy for packet crafting and live sniffing',s:['socket.socket()','TCP client/server','UDP datagram','bind/listen/accept','SSL wrapping (ssl module)','Non-blocking sockets','Scapy send/recv','Scapy sniff()','Craft IP/TCP/UDP layers','Raw socket IPPROTO_RAW']},
+  ]},
+]},
+{id:'networking',icon:'ti-network',label:'Networking Mastery',color:'#8b5cf6',bg:'rgba(139,92,246,0.1)',order:2,sections:[
+  {t:'Fundamentals',topics:[
+    {n:'Network Types & Topologies',l:B,d:'LAN/WAN/MAN/PAN/CAN scope and hardware; star/ring/mesh/bus physical and logical layouts',s:['LAN (Local Area Network)','WAN (Wide Area Network)','MAN (Metropolitan)','PAN (Personal)','CAN (Campus)','Star topology','Full/Partial Mesh','Bus topology','Hybrid topology','Physical vs logical topology']},
+    {n:'Network Devices',l:B,d:'Hub (L1), switch (L2 MAC), router (L3 IP), firewall, WAP, load balancer roles',s:['Hub (broadcast all)','Switch (MAC-based forward)','Router (IP routing)','Firewall (L3-L7)','Wireless Access Point','Load balancer','Proxy server','IDS/IPS appliance','Modem','NIC']},
+    {n:'Protocols Overview',l:B,d:'Core protocols at every layer with port numbers and their primary purpose',s:['HTTP port 80','HTTPS port 443','SSH port 22','DNS port 53','DHCP port 67/68','SMTP port 25','FTP port 21','SNMP port 161','RDP port 3389','LDAP port 389']},
+  ]},
+  {t:'OSI Model — 7 Layers',topics:[
+    {n:'L1 Physical',l:B,d:'Raw bit transmission over cables, fiber, wireless; encoding, bandwidth, attenuation',s:['Copper Cat5e/Cat6 cable','Fiber optic single/multi mode','Coaxial cable','Wireless radio waves','NRZ/Manchester encoding','Hubs and repeaters','Bandwidth vs throughput','Signal attenuation','Noise/interference','TDM/FDM multiplexing']},
+    {n:'L2 Data Link',l:B,d:'MAC addressing, Ethernet framing, CRC error detection, ARP, switches at this layer',s:['MAC address (48-bit)','Ethernet frame structure','Preamble / SFD','EtherType field','CRC (FCS) error detection','ARP protocol','Switch forwarding','Half/Full duplex','802.3 Ethernet standard','802.11 Wi-Fi (L2)']},
+    {n:'L3 Network',l:B,d:'Logical IP addressing, routing decisions, TTL, fragmentation, ICMP error messages',s:['IP addressing','IPv4 header fields','TTL (hop limit)','Protocol field (6=TCP,17=UDP)','ICMP messages','Routing decisions','Default gateway','Subnet mask','IP fragmentation','Fragment offset']},
+    {n:'L4 Transport',l:B,d:'End-to-end delivery: TCP reliable ordered segments vs UDP fast datagrams, port multiplexing',s:['TCP vs UDP','Port numbers 0-65535','Well-known ports 0-1023','Ephemeral ports 49152+','TCP segment structure','Sequence/ACK numbers','UDP datagram','Flow control (window size)','Error recovery (retransmit)','Port multiplexing']},
+    {n:'L5-L7 Session/Presentation/Application',l:B,d:'Session management, data encoding/encryption/compression, application protocols',s:['Session establishment/teardown','NetBIOS / RPC / SMB','Character encoding ASCII/UTF-8','Data serialization JSON/XML','Encryption at L6 (TLS)','Compression gzip/zlib','MIME types','HTTP/HTTPS','DNS / FTP / SMTP / SSH','DHCP / SNMP / LDAP']},
+  ]},
+  {t:'TCP/IP Suite',topics:[
+    {n:'TCP',l:B,d:'Connection-oriented: 3-way handshake, sequence numbers, flow control, congestion, teardown',s:['SYN / SYN-ACK / ACK','Sequence numbers','Acknowledgement numbers','Window size (flow control)','Sliding window algorithm','Slow start','Congestion window (cwnd)','FIN / FIN-ACK teardown','RST reset','Nagle algorithm']},
+    {n:'UDP / ICMP / ARP',l:B,d:'Connectionless UDP, ICMP diagnostic messages, ARP MAC resolution and spoofing',s:['UDP connectionless','No delivery guarantee','DNS/DHCP/VoIP use UDP','ICMP Echo Request (type 8)','ICMP Echo Reply (type 0)','TTL Exceeded (type 11)','ping / traceroute','ARP Request (broadcast)','ARP Reply (unicast)','Gratuitous ARP / ARP Spoofing']},
+  ]},
+  {t:'IP Addressing',topics:[
+    {n:'IPv4 & Subnetting',l:B,d:'32-bit addresses, classes, private ranges, subnet masks, VLSM, calculating hosts per subnet',s:['32-bit / 4 octets','Class A/B/C/D/E','Private: 10/8 172.16/12 192.168/16','Loopback 127.0.0.1','Subnet mask','CIDR prefix notation /24','Hosts = 2^n - 2','VLSM (variable length)','Network & broadcast address','Subnetting in binary']},
+    {n:'IPv6 & NAT & DNS',l:I,d:'128-bit IPv6 with EUI-64, dual stack; NAT types for address conservation; DNS full resolution chain',s:['128-bit / 8 hex groups',':: abbreviation','Link-local fe80::/10','Global unicast 2000::/3','EUI-64 interface ID','Dual stack','SNAT / DNAT / PAT','NAT table','DNS recursive resolver','Root/TLD/Authoritative NS','A/AAAA/MX/CNAME/TXT/PTR records','TTL / DNSSEC','DNS over HTTPS (DoH)','DNS cache poisoning']},
+  ]},
+  {t:'HTTP & TLS',topics:[
+    {n:'HTTP Methods & Status Codes',l:B,d:'All HTTP methods, idempotency, complete status code ranges, request/response structure',s:['GET / POST / PUT / PATCH / DELETE','HEAD / OPTIONS / TRACE','Idempotent methods','Safe methods','200 OK / 201 Created / 204 No Content','301 / 302 Redirect','304 Not Modified','400 Bad Request / 401 Unauthorized / 403 Forbidden','404 Not Found / 429 Too Many Requests','500/502/503 Server Errors']},
+    {n:'Cookies, Sessions & TLS',l:I,d:'HTTP statelessness solved with cookies; TLS 1.3 handshake, certificate chain, cipher suites, HSTS',s:['Set-Cookie header','HttpOnly / Secure flags','SameSite=Strict/Lax/None','Session cookie vs persistent','TLS 1.2 vs TLS 1.3','ClientHello / ServerHello','Certificate exchange','Certificate chain validation','ECDHE key exchange','HSTS header','SNI (Server Name Indication)','mTLS (mutual)','OCSP stapling','HTTP/2 multiplexing']},
+  ]},
+  {t:'Routing & Switching',topics:[
+    {n:'Routing',l:I,d:'Static routes, default route, dynamic protocols RIP/OSPF/BGP, longest prefix match',s:['Static route config','Default route 0.0.0.0/0','Administrative distance','Longest prefix match','RIP (distance-vector)','OSPF (link-state)','OSPF areas / LSA flooding','BGP (path-vector)','BGP AS numbers / iBGP vs eBGP','Route redistribution']},
+    {n:'Switching',l:I,d:'MAC table learning/flooding/aging, VLANs with 802.1Q, STP loop prevention',s:['MAC address table','MAC learning / flooding / aging','Access port / Trunk port','802.1Q VLAN tag','Native VLAN','Inter-VLAN routing','STP root bridge election','Port roles: Root/Designated/Blocked','RSTP (802.1w)','PortFast / BPDU Guard']},
+  ]},
+  {t:'Wireless & VPN',topics:[
+    {n:'Wi-Fi Standards & Security',l:I,d:'802.11 variants, 2.4/5/6 GHz bands, WPA2/WPA3 encryption, 4-way handshake, PMKID',s:['802.11b/g/n/ac/ax (Wi-Fi 6)','2.4 GHz vs 5 GHz vs 6 GHz','OFDM / OFDMA / MU-MIMO','SSID / BSSID / ESS','WEP (broken)','WPA2-AES-CCMP','WPA2 4-Way Handshake','PMKID capture','WPA3 SAE (Dragonfly)','Protected Management Frames']},
+    {n:'VPN Protocols',l:A,d:'IPSec IKEv2, ESP/AH, tunnel vs transport; SSL VPN; WireGuard with ChaCha20/Noise',s:['IPSec framework','IKEv2 negotiation','ESP (encrypt+auth)','AH (auth only)','Tunnel mode vs Transport mode','Site-to-site VPN','Remote access VPN','OpenVPN (SSL/TLS-based)','WireGuard (kernel module)','ChaCha20-Poly1305 / Curve25519']},
+  ]},
+]},
+{id:'linux',icon:'ti-brand-ubuntu',label:'Linux Mastery',color:'#10b981',bg:'rgba(16,185,129,0.1)',order:3,sections:[
+  {t:'Linux Architecture',topics:[
+    {n:'Kernel & Shell',l:B,d:'Monolithic kernel, kernel modules, syscalls, user space; bash/zsh shells, startup files',s:['Monolithic kernel','Kernel modules (.ko)','lsmod / modprobe','System calls (syscalls)','Kernel space vs user space','dmesg (kernel ring buffer)','uname -r (kernel version)','bash / zsh / sh','Login vs interactive shell','.bashrc vs .bash_profile']},
+    {n:'Filesystem Hierarchy',l:B,d:'FHS standard directories and their purpose: /etc, /var, /proc, /sys, /home, /usr',s:['/etc (config files)','/var (logs/spool/run)','/home (user homes)','/root (root home)','/usr/bin & /usr/lib','/tmp (temporary)','/proc (virtual process FS)','/sys (sysfs kernel params)','/dev (device files)','/mnt & /media (mount points)']},
+    {n:'Boot Process',l:I,d:'BIOS/UEFI to bootloader (GRUB2) to kernel to systemd PID 1 to login',s:['BIOS vs UEFI','MBR vs GPT','GRUB2 bootloader','grub.cfg config','initramfs / initrd','Kernel command line params','systemd PID 1','systemd targets','runlevel legacy mapping','plymouth boot splash']},
+  ]},
+  {t:'Essential Commands',topics:[
+    {n:'Navigation & File Ops',l:B,d:'Traversing filesystem, listing, creating, copying, moving, archiving, linking files',s:['ls -la / tree','cd / pwd','cp -r / mv / rm -rf','mkdir -p / touch','ln -s (symlink) / ln (hard link)','find . -name "*.log"','find -type f/d -size +10M','tar -czvf / tar -xzvf','rsync -av','zip / unzip']},
+    {n:'Text Processing',l:B,d:'Searching and transforming text with grep, sed, awk, cut, sort, uniq, tr, wc',s:['grep -r -E -v -i','sed s/old/new/g','sed -i (in-place edit)','awk -F: field split','awk print fields','cut -d: -f1','sort / sort -n / sort -r','uniq -c (count dupes)','tr -d (delete chars)','wc -l / head -20 / tail -f']},
+    {n:'System Info',l:B,d:'Hardware, memory, disk, CPU, network info commands for system diagnostics',s:['uname -a','hostnamectl','lscpu / nproc','free -h (memory)','df -h (disk space)','du -sh * (dir sizes)','lsblk / blkid','lspci / lsusb','dmidecode','uptime / w / who']},
+  ]},
+  {t:'Filesystem & Permissions',topics:[
+    {n:'Inodes & Mounting',l:I,d:'Inode structure, hard vs soft links, mounting filesystems, fstab, LVM, RAID',s:['inode structure (metadata)','stat command','ls -i (inode number)','Hard link (same inode)','Soft link / symlink','readlink command','mount / umount','fstab format','UUID in fstab','mkfs.ext4 / mkfs.xfs','LVM pvcreate/vgcreate/lvcreate','RAID 0/1/5 with mdadm']},
+    {n:'chmod & chown',l:B,d:'Read/write/execute for user/group/other, octal notation, SUID/SGID/sticky, ownership',s:['rwx notation','Owner / Group / Others','chmod 755 / 644 / 777','chmod u+x / g-w / o=r','Octal: 4=r 2=w 1=x','SUID bit (4xxx)','SGID bit (2xxx)','Sticky bit (1xxx)','chown user:group file','chown -R recursive']},
+    {n:'ACL',l:I,d:'Fine-grained permissions beyond owner/group with getfacl/setfacl, default ACLs',s:['getfacl file','setfacl -m u:user:rwx','setfacl -m g:group:r','Default ACL (-d flag)','ACL mask','Remove ACL (-x flag)','ACL inheritance','mount with acl option','tune2fs to enable ACL','Viewing effective permissions']},
+  ]},
+  {t:'Processes & Services',topics:[
+    {n:'Process Management',l:B,d:'Viewing processes with ps/top/htop, job control, signals, nice values, /proc',s:['ps aux / ps -ef','top / htop interactive','PID / PPID / process states','& background job','jobs / fg / bg','nohup (detach from terminal)','nice -n / renice','kill -SIGTERM / kill -9','pkill -f pattern','pgrep / killall']},
+    {n:'systemd & Logging',l:I,d:'systemctl for service management, unit files structure, journalctl log filtering',s:['systemctl start/stop/restart','systemctl enable/disable','systemctl status','systemctl daemon-reload','Unit file sections [Unit][Service][Install]','Service types: simple/forking/oneshot','systemctl list-units','journalctl -u service','journalctl -f (follow)','journalctl --since "1 hour ago"']},
+  ]},
+  {t:'Networking & SSH',topics:[
+    {n:'SSH',l:B,d:'Key-based auth, ssh-keygen, config file, port forwarding types, SCP, hardening sshd_config',s:['ssh-keygen -t ed25519','ssh-copy-id user@host','~/.ssh/authorized_keys','~/.ssh/config Host block','ProxyJump / ProxyCommand','Local port forwarding -L','Remote port forwarding -R','Dynamic SOCKS proxy -D','SCP / rsync over SSH','sshd_config: PermitRootLogin no']},
+    {n:'Network Tools',l:I,d:'ip suite, ss, tcpdump, nmap, curl, dig for network diagnostics and traffic capture',s:['ip addr / ip link / ip route','ss -tulnp (sockets)','netstat -tulnp','tcpdump -i eth0 port 443','tcpdump -w capture.pcap','ping / traceroute / mtr','nmap -sn ping sweep','curl -v / wget','dig / nslookup / whois','iptables -L / ufw status']},
+  ]},
+  {t:'Bash Scripting',topics:[
+    {n:'Variables, Arrays & Loops',l:I,d:'Shell variables, quoting, environment, arrays, string manipulation, all loop types',s:['VAR=value / export VAR','${VAR} / ${VAR:-default}','Arrays: arr=(1 2 3)','${arr[@]} / ${#arr[@]}','String length ${#var}','Substring ${var:0:5}','for item in list','for ((i=0;i<10;i++))','while/until loops','String replacement ${var/old/new}']},
+    {n:'Conditionals & Functions',l:I,d:'if/elif/else, case, test expressions, functions with local vars, exit codes, error handling',s:['if [ condition ]','[[ extended test ]]','Test: -f file -d dir -z empty','elif / else / case','function name() {}','$1 $2 $@ $# args','local variables','return exit code','set -e (exit on error)','set -u (unset var error)','set -o pipefail','trap ERR / trap EXIT']},
+    {n:'Administration & Hardening',l:A,d:'User management, cron, logrotate, AppArmor, SELinux, auditd, fail2ban, iptables',s:['useradd -m / passwd / userdel -r','usermod -aG sudo user','crontab -e syntax','@daily / @reboot cron','logrotate.conf','AppArmor aa-status/enforce','SELinux getenforce/setenforce','auditctl -w (watch file)','ausearch / aureport','fail2ban jail.local','iptables INPUT/OUTPUT/FORWARD','ufw enable / allow / deny']},
+  ]},
+]},
+{id:'cybersec',icon:'ti-shield-lock',label:'Cybersecurity Mastery',color:'#f59e0b',bg:'rgba(245,158,11,0.1)',order:4,sections:[
+  {t:'Foundations',topics:[
+    {n:'CIA Triad & Risk',l:B,d:'Confidentiality/Integrity/Availability + non-repudiation; risk assessment likelihood x impact',s:['Confidentiality','Integrity','Availability','Non-repudiation','Authenticity','Risk identification','Threat x Vulnerability','Likelihood x Impact matrix','Risk register','Risk treatment: Accept/Avoid/Transfer/Mitigate']},
+    {n:'Threat Modeling',l:I,d:'Structured threat identification: STRIDE, PASTA, attack trees, DFD trust boundaries, MITRE',s:['STRIDE (Spoofing,Tampering,Repudiation,Info Disclosure,DoS,Elevation)','PASTA methodology','Attack trees','Data Flow Diagrams','Trust boundaries','DREAD scoring','MITRE ATT&CK framework','Cyber Kill Chain','Diamond model','CVSS scoring v3']},
+    {n:'Security Controls',l:B,d:'Preventive/detective/corrective controls; administrative/technical/physical; defense in depth',s:['Preventive controls','Detective controls','Corrective controls','Administrative controls','Technical controls','Physical controls','Defense in depth','Zero Trust model','Least privilege principle','Need-to-know principle']},
+  ]},
+  {t:'Cryptography',topics:[
+    {n:'Symmetric Encryption',l:I,d:'Same key for encrypt/decrypt: AES block cipher modes GCM/CBC/CTR, key distribution problem',s:['AES-128 / AES-192 / AES-256','AES-GCM (authenticated)','AES-CBC mode + IV','AES-CTR (stream mode)','DES (deprecated 56-bit)','3DES (legacy)','Block vs stream cipher','PKCS7 padding','IV (Initialization Vector)','Key Distribution Problem']},
+    {n:'Asymmetric & Hashing',l:I,d:'RSA/ECC public-private pairs, DH key exchange; MD5/SHA/bcrypt/argon2, HMAC',s:['RSA 2048/4096-bit','RSA encrypt/decrypt','ECDSA (signing)','ECDH (key exchange)','Diffie-Hellman','Perfect Forward Secrecy','MD5 (broken)','SHA-1 (broken)','SHA-256 / SHA-512','SHA-3 (Keccak)','bcrypt (password)','argon2id (modern)','HMAC (keyed hash)','Salt (random prefix)']},
+    {n:'PKI & Certificates',l:A,d:'CA hierarchy, X.509 cert structure, CSR, DER/PEM, cert chain, CRL, OCSP, certificate transparency',s:['Root CA','Intermediate CA','End-entity certificate','X.509 certificate structure','CSR (Certificate Signing Request)','DER / PEM formats','Certificate chain','CRL (Revocation List)','OCSP (Online Status)','Certificate Transparency logs','Lets Encrypt (ACME)','Self-signed certificate','Code signing certificate','Certificate pinning']},
+  ]},
+  {t:'Authentication & Access',topics:[
+    {n:'Passwords & MFA',l:B,d:'Password policies, secure storage with bcrypt/argon2, TOTP, FIDO2/WebAuthn hardware keys',s:['Password complexity policy','Account lockout policy','Never store plaintext','bcrypt/argon2 hashing','Salt for password hashing','TOTP (RFC 6238)','HOTP (RFC 4226)','Authenticator apps (TOTP)','FIDO2 / WebAuthn standard','YubiKey hardware token','Passkeys (FIDO2)','SMS OTP weaknesses']},
+    {n:'OAuth2, SAML & JWT',l:I,d:'OAuth2 grant flows, PKCE, SAML SP/IdP SSO, JWT structure and common attacks',s:['OAuth2 Authorization Code','PKCE (Proof Key)','Client Credentials flow','Access token / Refresh token','SAML 2.0 assertion','Service Provider (SP)','Identity Provider (IdP)','SSO login flow','JWT header.payload.sig','JWT none algorithm attack','JWT secret brute force','OpenID Connect (OIDC)','ID token claims','SAML XML Wrapping attack']},
+  ]},
+  {t:'Network Security',topics:[
+    {n:'Firewalls & IDS/IPS',l:I,d:'Stateful firewalls, NGFW application inspection, WAF; Snort/Suricata signature and anomaly detection',s:['Stateless packet filter','Stateful inspection','NGFW (application aware)','WAF (web app firewall)','Firewall rules ACL','Implicit deny','DMZ architecture','IDS (detect only)','IPS (detect + block)','Snort rules','Suricata rules','Signature-based detection','Anomaly-based detection','NIDS vs HIDS']},
+    {n:'SIEM',l:A,d:'Log aggregation, normalization, correlation rules, Splunk/ELK/QRadar, alert tuning, SOAR',s:['Log collection (syslog/agent)','Log normalization','Splunk SPL queries','Elastic/ELK Stack','Kibana dashboards','QRadar deployment','Correlation rules','Alert tuning (reduce FP)','Detection use cases','UEBA in SIEM','Threat intel integration','SOAR integration','Log retention policy','Filebeat / Logstash']},
+  ]},
+  {t:'Security Operations',topics:[
+    {n:'SOC & Incident Response',l:I,d:'SOC tiers/triage, 6-phase IR lifecycle: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned',s:['SOC Tier 1/2/3','Alert triage workflow','Escalation matrix','Runbooks/playbooks','MTTD / MTTR metrics','IR plan (Preparation)','Identification (detection)','Containment (isolate)','Eradication (remove threat)','Recovery (restore)','Lessons Learned','Evidence preservation','Chain of custody','Tabletop exercises']},
+    {n:'Threat Hunting',l:A,d:'Proactive hypothesis-driven hunting using MITRE ATT&CK TTPs, Sigma/YARA rules, log hunting',s:['Hypothesis-driven hunting','TTP (Tactics,Techniques,Procedures)','MITRE ATT&CK matrix','Sigma rule format','YARA rules','Hunting in SIEM logs','Network traffic hunting','Endpoint hunting (EDR)','Threat intel-led hunting','Hunt report writing']},
+  ]},
+  {t:'Digital Forensics',topics:[
+    {n:'Disk & Memory Forensics',l:A,d:'Forensic imaging with dd, Autopsy/FTK artifact analysis; Volatility for RAM process/network analysis',s:['Forensic image (dd/dcfldd)','Write blocker','MD5/SHA256 hash verification','Autopsy tool','FTK (Forensic Toolkit)','MFT ($MFT) analysis','Deleted file recovery','Browser artifacts','Registry analysis','Volatility 3 framework','pslist / pstree plugins','netscan (connections)','malfind (injected code)','Memory dump acquisition']},
+    {n:'Log Analysis',l:I,d:'Windows Event IDs, Linux auth/syslog, web server logs, correlating for incident timeline',s:['Windows Event ID 4624 (logon)','Event ID 4625 (failed logon)','Event ID 4688 (process create)','Event ID 4648 (explicit logon)','Event ID 4672 (special privileges)','Linux /var/log/auth.log','/var/log/syslog','Apache/Nginx access logs','Web log analysis','Log correlation timeline']},
+  ]},
+  {t:'Governance & Compliance',topics:[
+    {n:'ISO 27001 & NIST',l:I,d:'ISO 27001 ISMS standard with Annex A controls; NIST CSF 5 functions and SP 800-53 controls',s:['ISO 27001 clauses 4-10','ISMS scope definition','Annex A (114 controls)','Statement of Applicability','ISO 27005 risk assessment','NIST CSF: Identify/Protect/Detect/Respond/Recover','SP 800-53 control catalog','NIST RMF 7 steps','FISMA compliance','NIST SP 800-171 (CUI)']},
+    {n:'PCI DSS',l:I,d:'12 requirements for cardholder data, SAQ levels, QSA audits, network segmentation',s:['12 PCI DSS requirements','Cardholder Data Env (CDE)','Network segmentation','No default passwords','Protect stored cardholder data','Encrypt data in transit','Anti-malware requirement','Access control (need-to-know)','Track and monitor access','Penetration testing requirement','SAQ A/B/C/D types','QSA assessment process']},
+  ]},
+]},
+{id:'ethicalhack',icon:'ti-bug',label:'Ethical Hacking Mastery',color:'#ef4444',bg:'rgba(239,68,68,0.1)',order:5,sections:[
+  {t:'Reconnaissance',topics:[
+    {n:'OSINT',l:B,d:'Passive info gathering from public sources: Maltego, Shodan, theHarvester, social media, GitHub leaks',s:['Maltego graph mapping','Recon-ng modules','theHarvester (emails/subdomains)','Shodan IoT search engine','Censys.io','SpiderFoot OSINT automation','Social media profiling','LinkedIn employee enum','GitHub code leaks','Google hacking GHDB','Wayback Machine','Hunter.io email finder','FOCA (document metadata)','Pastebin leaked data']},
+    {n:'DNS & Google Dorks',l:B,d:'WHOIS lookups, subdomain enumeration, DNS zone transfers; Google advanced search operators',s:['whois domain lookup','dnsx / dnsrecon','subfinder / amass (subdomains)','Zone transfer: dig axfr @ns','Certificate transparency (crt.sh)','SPF/DKIM/DMARC records','Google site: operator','filetype:pdf/xls/sql','inurl: / intitle:','intitle:"index of" directory listing','ext:env .env files','intext:password','Bing/Yandex dorks','GHDB (Google Hacking Database)']},
+    {n:'Active Recon with Nmap',l:I,d:'Host discovery, SYN/UDP scans, version detection, OS fingerprinting, NSE scripts, evasion',s:['nmap -sn (ping sweep)','nmap -sS (SYN stealth scan)','nmap -sT (TCP connect)','nmap -sU (UDP scan)','nmap -sV (version detect)','nmap -O (OS fingerprint)','nmap -A (aggressive)','nmap -p- (all 65535 ports)','NSE scripts --script','nmap -T0 to T5 timing','Fragmentation -f (FW evasion)','Decoy scan -D','nmap -oN/-oX output','nmap --reason flag']},
+  ]},
+  {t:'Enumeration',topics:[
+    {n:'SMB & LDAP Enumeration',l:I,d:'Windows SMB shares/users/policies via null sessions; AD LDAP user/group/computer enumeration',s:['enum4linux -a','smbclient -L //IP','smbmap -H IP','crackmapexec smb','Null session (anonymous bind)','Share enumeration','User enumeration via SMB','rpcclient commands','BloodHound AD mapping','SharpHound collector','ldapsearch -x -H','Anonymous LDAP bind','LDAP filter syntax','Distinguished Name (DN)']},
+    {n:'SNMP & Service Enum',l:I,d:'SNMP community string enumeration, MIB walking; service banner grabbing, version fingerprinting',s:['snmpwalk -v2c -c public','Community string brute force (onesixtyone)','SNMPv1/v2c plaintext','SNMPv3 auth+encrypt','System description OID','Interface table OID','Nessus vulnerability scanner','OpenVAS/GVM','CVSS v3 scoring','Metasploit auxiliary scanners']},
+  ]},
+  {t:'Exploitation',topics:[
+    {n:'Buffer Overflow',l:A,d:'Stack-based BOF: fuzzing, EIP control, bad chars, shellcode, NOP sled, ret2libc, DEP/ASLR bypass',s:['Stack layout ESP/EBP/EIP','Fuzzing with python/spike','msf-pattern create/offset','EIP offset calculation','Bad character detection','JMP ESP gadget','MSFvenom shellcode','NOP sled \x90','ret2libc technique','DEP/NX bypass','ASLR bypass','ROP chains','x64 BOF differences','pwntools library']},
+    {n:'Metasploit',l:A,d:'msfconsole workflow, exploits/payloads/encoders, Meterpreter post-exploitation, MSFvenom',s:['msfconsole interface','use exploit/...','set RHOSTS / LHOST / LPORT','show options / info','exploit / run','Meterpreter shell','hashdump (credential dump)','getsystem (privilege esc)','migrate (process injection)','download / upload','background session','MSFvenom payload creation','Encoders to avoid AV','Post-exploitation modules','msfdb / workspace']},
+    {n:'Post Exploitation',l:A,d:'Persistence, privilege escalation, lateral movement, data exfiltration, C2 frameworks',s:['Registry persistence','Scheduled task persistence','Reverse shell / bind shell','Linux sudo -l enum','SUID binary exploitation','Kernel exploit (local priv esc)','Token impersonation (Windows)','Pass-the-Hash (PTH)','Pass-the-Ticket (PTT)','BloodHound lateral paths','Living off the land (LOLBins)','Data exfiltration','Cobalt Strike / Sliver C2','OPSEC considerations']},
+  ]},
+  {t:'Web Application Security',topics:[
+    {n:'OWASP Top 10',l:I,d:'All 10 OWASP 2021 categories: broken access, injections, SSRF, misconfig, crypto failures',s:['A01: Broken Access Control','A02: Cryptographic Failures','A03: Injection (SQLi/XSS/cmd)','A04: Insecure Design','A05: Security Misconfiguration','A06: Vulnerable Components','A07: ID & Auth Failures','A08: Software Integrity Failures','A09: Security Logging Failures','A10: SSRF']},
+    {n:'SQLi & XSS',l:I,d:'SQL injection types and sqlmap; XSS reflected/stored/DOM and BeEF, CSP bypass',s:['Error-based SQLi','Union-based SQLi','Blind Boolean SQLi','Blind Time-based (SLEEP)','sqlmap --dbs / --dump','sqlmap WAF bypass','Second-order SQLi','Reflected XSS','Stored (Persistent) XSS','DOM-based XSS','Cookie theft via XSS','BeEF browser exploitation','CSP bypass techniques','Output encoding (fix)']},
+    {n:'CSRF, SSRF, XXE & Burp',l:A,d:'CSRF token bypass, SSRF to cloud metadata, XXE file read; Burp Suite full testing workflow',s:['CSRF forged form submission','SameSite cookie fix','SSRF to 169.254.169.254 AWS metadata','SSRF to internal services','Blind SSRF via DNS','XXE DOCTYPE injection','XXE /etc/passwd read','Blind XXE out-of-band','Burp Proxy intercept','Burp Repeater','Burp Intruder Sniper/Pitchfork','Burp Scanner (Pro)','Burp Collaborator','Burp Decoder/Comparer']},
+  ]},
+  {t:'Wireless & Active Directory',topics:[
+    {n:'Wireless Attacks',l:A,d:'WPA2 handshake capture, PMKID, deauth, hashcat cracking, Evil Twin with captive portal',s:['airmon-ng (monitor mode)','airodump-ng (capture)','aireplay-ng (deauth attack)','4-Way handshake capture','PMKID capture (hcxdumptool)','hashcat -m 22000 WPA2','Wordlist attack (rockyou)','Rule-based attack -r','Mask attack ?u?l?d','Evil Twin rogue AP','hostapd-wpe','Captive portal phishing','WPA3 SAE resistance','Deauth protection (802.11w)']},
+    {n:'Active Directory Attacks',l:A,d:'Kerberoasting, AS-REP Roasting, PTH, Golden/Silver Ticket, DCSync, BloodHound path analysis',s:['Kerberoasting (SPN ticket)','AS-REP Roasting (no preauth)','GetUserSPNs.py (Impacket)','Hashcat TGS ticket crack','Pass-the-Hash (NTLM)','Mimikatz sekurlsa::logonpasswords','Pass-the-Ticket (Kerberos)','Golden Ticket (krbtgt hash)','Silver Ticket (service hash)','DCSync (domain replication)','BloodHound shortest attack path','NTDS.dit extraction','Lateral via WMI/PSExec','LAPS bypass']},
+  ]},
+]},
+{id:'aws',icon:'ti-cloud-lock',label:'AWS Cloud Security',color:'#f97316',bg:'rgba(249,115,22,0.1)',order:6,sections:[
+  {t:'Cloud Fundamentals',topics:[
+    {n:'Shared Responsibility & Infrastructure',l:B,d:'AWS vs customer security boundaries; regions, AZs, edge locations, global infrastructure',s:['AWS secures: physical/hypervisor/managed services','Customer secures: OS/app/IAM/data','IaaS vs PaaS vs SaaS differences','Shared controls (patching,logging)','AWS Regions (us-east-1 etc.)','Availability Zones (2-6 per region)','Edge Locations (CloudFront CDN)','Local Zones','Multi-region HA architecture','Data residency requirements']},
+  ]},
+  {t:'Core AWS Services',topics:[
+    {n:'EC2',l:B,d:'Virtual machines: instance types, AMIs, security groups, key pairs, IMDS v2, IAM instance profiles',s:['Instance types t3/m5/c5/r5','On-Demand/Reserved/Spot pricing','AMIs (Amazon Machine Images)','Security Groups (stateful FW)','Key Pairs (SSH access)','EC2 Instance Metadata (IMDS)','IMDSv2 (session-oriented, required)','IAM Instance Profile','User Data bootstrap script','EC2 Systems Manager (SSM)']},
+    {n:'S3',l:B,d:'Object storage: bucket policies, block public access, SSE encryption, versioning, Object Lock',s:['Buckets and objects','Bucket Policy (JSON)','S3 Block Public Access settings','ACL (legacy, avoid)','SSE-S3 (AWS managed key)','SSE-KMS (customer managed)','Client-side encryption','Versioning','MFA Delete','Object Lock (WORM)','S3 Replication (CRR/SRR)','Pre-signed URLs (temp access)','S3 Access Points','Lifecycle rules']},
+    {n:'RDS, Lambda & VPC',l:I,d:'Managed RDS with encryption/Multi-AZ; serverless Lambda with execution roles; VPC network isolation',s:['RDS Multi-AZ deployment','RDS encryption at rest (KMS)','RDS SSL in transit','Lambda Execution Role (IAM)','Lambda env vars (encrypted)','Lambda in VPC','Lambda function URLs','VPC CIDR block','Public vs private subnets','Internet Gateway / NAT Gateway','Network ACLs (stateless)','Security Groups (stateful)','VPC Peering / Transit Gateway','VPC Endpoints (PrivateLink)']},
+  ]},
+  {t:'IAM',topics:[
+    {n:'Users, Roles & Policies',l:I,d:'IAM users, groups, roles for services/federation; JSON policy structure; least privilege',s:['IAM Users (long-term credentials)','IAM Groups (bulk assignment)','IAM Roles (temporary credentials)','Assume Role sts:AssumeRole','Role trust policy','Instance Profile for EC2','Cross-account roles','Policy JSON: Effect/Action/Resource/Condition','AWS Managed Policies','Customer Managed Policies','Inline Policies','Explicit Deny always wins','IAM Access Analyzer','Permission Boundaries']},
+  ]},
+  {t:'Security Services',topics:[
+    {n:'KMS & Secrets Manager',l:I,d:'KMS key management with envelope encryption; Secrets Manager for automatic credential rotation',s:['Customer Managed Keys (CMK)','Key policy (resource-based)','Encrypt/Decrypt/GenerateDataKey','Envelope encryption pattern','Data Key (plain + cipher)','Key rotation (automatic annual)','KMS multi-region keys','CloudHSM (dedicated HSM)','Secrets Manager JSON storage','Automatic rotation (Lambda)','Cross-account secret access','Compare vs SSM Parameter Store']},
+    {n:'WAF & Shield',l:I,d:'WAF Web ACL with managed OWASP rules, rate limiting, bot control; Shield DDoS protection tiers',s:['WAF Web ACL','AWS Managed Rules (OWASP)','Rate-based rules','IP set blocking','Geo match rules','Bot Control managed rule','WAF on CloudFront/ALB/API GW','WAF logging to S3','Shield Standard (free, always on)','Shield Advanced (paid)','DDoS L3/L4 + L7 protection','DDoS Response Team (DRT)','Cost protection credits']},
+  ]},
+  {t:'Monitoring & Compliance',topics:[
+    {n:'CloudWatch & CloudTrail',l:I,d:'CloudWatch metrics/alarms/logs/insights; CloudTrail API call audit trail with integrity validation',s:['CloudWatch Metrics (CPU/Network)','Custom metrics (PutMetricData)','CloudWatch Alarms + SNS','CloudWatch Logs groups/streams','CloudWatch Logs Insights (query)','CloudWatch Dashboards','CloudWatch Agent (EC2)','CloudTrail management events','CloudTrail data events (S3/Lambda)','CloudTrail Insights (anomalous)','Trail to S3 bucket','Log file integrity (SHA-256)','CloudTrail Lake (SQL query)','Multi-region trail']},
+    {n:'GuardDuty, Security Hub & Config',l:A,d:'GuardDuty ML threat detection; Security Hub CSPM aggregation; Config continuous compliance rules',s:['GuardDuty threat intel feeds','ML anomaly detection','CloudTrail/VPC Flow/DNS analysis','GuardDuty finding types','Auto-remediation (EventBridge+Lambda)','GuardDuty Malware Protection','Security Hub CSPM','CIS Benchmark checks','FSBP (AWS Foundational)','Findings aggregation (multi-account)','AWS Config recorder','Config rules (managed/custom)','Conformance Packs','Config remediation (SSM)']},
+  ]},
+  {t:'Container Security',topics:[
+    {n:'ECS & EKS',l:A,d:'ECS Fargate task roles, ECR image scanning; EKS RBAC, network policies, IRSA, secrets encryption',s:['ECS Task Role (IAM)','ECS Execution Role','Fargate (serverless containers)','ECR image scanning (basic/enhanced)','Secrets from Secrets Manager','ECS awsvpc networking','EKS cluster IAM auth','aws-auth ConfigMap','Kubernetes RBAC Roles/ClusterRoles','Network Policies (Calico)','Pod Security Admission','IRSA (IAM Roles for Service Accounts)','Secrets encryption at rest (KMS)','Falco runtime security']},
+  ]},
+]},
+{id:'aiml',icon:'ti-brain',label:'AI & ML Mastery',color:'#a78bfa',bg:'rgba(167,139,250,0.1)',order:7,sections:[
+  {t:'Mathematics for ML',topics:[
+    {n:'Linear Algebra',l:B,d:'Vectors, matrices, dot products, eigenvalues, SVD — the backbone of ML algorithms',s:['Scalars / Vectors / Matrices / Tensors','Matrix multiplication','Dot product','Matrix transpose / inverse','Determinant','Eigenvalues & Eigenvectors','SVD (Singular Value Decomposition)','PCA from eigen decomposition','L1 and L2 norms','Orthogonality']},
+    {n:'Probability & Statistics',l:B,d:'Probability distributions, Bayes theorem, MLE, hypothesis testing, Central Limit Theorem',s:['Conditional probability','Bayes theorem','Normal (Gaussian) distribution','Binomial / Bernoulli','Expectation & Variance','Covariance & Correlation','Maximum Likelihood Estimation (MLE)','MAP estimation','p-value & hypothesis testing','Central Limit Theorem']},
+    {n:'Calculus & Optimization',l:I,d:'Derivatives, gradients, chain rule, gradient descent variants, Adam optimizer',s:['Partial derivatives','Gradient (vector of partials)','Chain rule','Gradient Descent','Stochastic GD (SGD)','Mini-batch SGD','Learning rate scheduling','Momentum','Adam optimizer','RMSprop / Adagrad']},
+  ]},
+  {t:'Python ML Libraries',topics:[
+    {n:'NumPy & Pandas',l:B,d:'ndarray broadcasting/vectorization/linalg; DataFrame groupby/merge/pivot/cleaning',s:['np.array / ndarray','shape / dtype / ndim','Broadcasting rules','Vectorized ops (no Python loops)','np.dot / np.matmul','np.linalg (inv/eig/svd)','Boolean indexing','np.random module','pd.DataFrame / pd.Series','read_csv / read_json','groupby().agg()','merge() / concat()','Handle missing (dropna/fillna)','to_csv / to_parquet']},
+    {n:'Matplotlib & Plotly',l:B,d:'Static charts with Matplotlib/Seaborn; interactive visualizations with Plotly Express',s:['plt.plot / scatter / bar / hist','plt.subplots() Figure/Axes','sns.heatmap (correlation)','sns.pairplot','plt.savefig()','px.scatter / px.bar / px.line','px.choropleth (maps)','go.Figure / go.Scatter','Hover data / animation','Dash web framework']},
+  ]},
+  {t:'Machine Learning',topics:[
+    {n:'Regression & Classification',l:I,d:'Supervised learning: linear/ridge/lasso regression; logistic/SVM/tree/ensemble classifiers; evaluation',s:['Linear Regression','Ridge (L2) / Lasso (L1)','Polynomial features','Logistic Regression','Decision Tree (CART)','Random Forest','Gradient Boosting (XGBoost/LightGBM)','SVM with kernel trick','K-Nearest Neighbors','Naive Bayes','R2/MAE/RMSE (regression)','Accuracy/Precision/Recall/F1/ROC-AUC (classification)','Cross-validation','sklearn Pipeline']},
+    {n:'Clustering & Dimensionality Reduction',l:I,d:'Unsupervised K-Means, DBSCAN, hierarchical; PCA, t-SNE, UMAP for dimensionality reduction',s:['K-Means + Elbow method','K-Means++ initialization','DBSCAN epsilon/minPts','Hierarchical clustering','Dendrogram','Silhouette score','Gaussian Mixture Models','PCA explained variance ratio','t-SNE (visualization)','UMAP (structure preserving)','LDA (supervised DR)','Feature importance (tree)','Autoencoders for DR']},
+  ]},
+  {t:'Deep Learning',topics:[
+    {n:'Neural Networks & CNNs',l:I,d:'MLP architecture, backpropagation, activations; CNN convolution/pooling, ResNet, transfer learning',s:['Multi-layer Perceptron (MLP)','Activation: ReLU/sigmoid/tanh','Weight init: He/Xavier','Forward pass / Backpropagation','Loss: MSE/CrossEntropy','Batch Normalization','Dropout regularization','Convolution operation','Max Pooling / Avg Pooling','ResNet (skip connections)','Transfer learning (fine-tune)','Data augmentation','Object detection (YOLO)','Segmentation (U-Net)']},
+    {n:'RNN/LSTM & Transformers',l:A,d:'Sequential RNN with LSTM gates for vanishing gradient; Transformer self-attention, BERT/GPT',s:['RNN unrolling','Vanishing gradient problem','LSTM forget/input/output gates','Cell state / Hidden state','GRU (simplified LSTM)','Bidirectional RNN','Seq2Seq encoder-decoder','Self-attention mechanism','Query / Key / Value','Scaled Dot-Product Attention','Multi-Head Attention','Positional encoding','BERT pretraining (MLM/NSP)','GPT (autoregressive)']},
+  ]},
+  {t:'NLP & LLMs',topics:[
+    {n:'Tokenization & Embeddings',l:I,d:'BPE/WordPiece/SentencePiece tokenizers; Word2Vec, GloVe, Sentence-BERT semantic embeddings',s:['Word tokenization','BPE (Byte-Pair Encoding)','WordPiece (BERT)','SentencePiece (T5/Llama)','Special tokens [CLS][SEP][PAD]','Vocabulary size tradeoffs','Word2Vec (CBOW/Skip-gram)','GloVe (global co-occurrence)','FastText (subword)','Sentence-BERT / SBERT','Cosine similarity','Semantic search','sentence-transformers library','Contextual embeddings']},
+    {n:'Large Language Models',l:A,d:'GPT/BERT/Llama/Mistral architectures, context windows, KV cache, quantization, inference',s:['GPT (autoregressive/decoder)','BERT (bidirectional encoder)','Llama 2 / Llama 3','Mistral 7B','Gemma / Phi-3','Context window (4K-128K+)','KV cache (inference optimization)','Temperature / top-p sampling','Greedy vs beam search','Quantization 4-bit/8-bit','GGUF format (llama.cpp)','ollama local deployment','Hugging Face model hub','vLLM / TGI serving']},
+  ]},
+  {t:'RAG, Fine-Tuning & Agents',topics:[
+    {n:'RAG',l:A,d:'Retrieval-Augmented Generation: chunking, embedding, vector DB retrieval, reranking, evaluation',s:['Document chunking strategies','Embedding model selection','FAISS (local vector search)','Chroma / Pinecone / Qdrant / Weaviate','Cosine/dot product similarity','Metadata filtering','Cross-encoder reranking','HyDE (hypothetical document)','Parent-child chunking','LangChain RAG chain','LlamaIndex','RAGAS evaluation framework','Retrieval pipeline tuning','Context window stuffing']},
+    {n:'Fine-Tuning',l:A,d:'LoRA/QLoRA PEFT methods, instruction tuning, RLHF/DPO alignment, SFT dataset prep',s:['Full fine-tuning','LoRA (Low-Rank Adaptation)','QLoRA (4-bit quantized LoRA)','PEFT library','Adapter layers','Instruction tuning (Alpaca/Dolly)','Supervised Fine-Tuning (SFT)','RLHF (PPO alignment)','DPO (Direct Preference Opt.)','Dataset preparation','Axolotl / LLaMA-Factory','Evaluation with MT-Bench','Catastrophic forgetting','Merging adapters']},
+    {n:'AI Agents',l:A,d:'LLM agents with tools, ReAct planning, memory systems, LangGraph, AutoGen multi-agent',s:['ReAct (Reason + Act)','Tool calling / Function calling','Task decomposition (planning)','Short-term memory (context window)','Long-term memory (vector store)','LangChain Agents','LangGraph (stateful graph)','AutoGen (multi-agent framework)','CrewAI role-based agents','OpenAI Assistants API','Code interpreter tool','Web search tool','Agent evaluation','Multi-agent orchestration']},
+  ]},
+]},
+{id:'aisec',icon:'ti-shield-half',label:'AI Security Mastery',color:'#34d399',bg:'rgba(52,211,153,0.1)',order:8,sections:[
+  {t:'AI Threat Detection',topics:[
+    {n:'Anomaly Detection & UEBA',l:I,d:'ML-based anomaly detection for logs/network; UEBA behavioral baselining and risk scoring',s:['Isolation Forest','Autoencoder reconstruction error','Z-Score / IQR outlier detection','One-Class SVM','Local Outlier Factor (LOF)','HDBSCAN clustering','UEBA behavioral baseline','Peer group comparison','Dynamic risk scoring','Impossible travel detection','Unusual login time/location','Privileged account monitoring','Alert fatigue reduction','Streaming anomaly detection']},
+    {n:'Network & Log ML',l:A,d:'ML on NetFlow/PCAP for intrusion detection, DGA detection, C2 beacon, encrypted traffic classification',s:['NetFlow feature engineering','Packet-based features','DGA detection (character n-grams)','Encrypted traffic classification','C2 beacon detection (periodicity)','DNS tunneling detection','CNN/RNN on packet sequences','Zeek logs as ML input','Suricata + ML integration','MITRE ATT&CK TTP mapping','Benchmark datasets (CICIDS/NSL-KDD)','Feature engineering from PCAP','Graph-based anomaly detection','Protocol anomaly detection']},
+  ]},
+  {t:'Malware Analysis & Classification',topics:[
+    {n:'Static & Dynamic Analysis',l:A,d:'PE header analysis, YARA rules, Ghidra disassembly; sandbox behavioral logging, process monitoring',s:['PE file structure analysis','Import Address Table (IAT)','Strings extraction','YARA rule writing & scanning','PEiD packer detection','Ghidra / IDA Pro disassembly','Detect-It-Easy (DIE)','Cuckoo sandbox (automated)','Any.run cloud sandbox','Process Monitor (ProcMon)','Wireshark during execution','Regshot registry diff','API Monitor','Volatility on runtime memory']},
+    {n:'ML Malware Classification',l:A,d:'Feature extraction from PE/API calls/opcodes, training classifiers, CNN on raw bytes',s:['API call sequence features','OpCode n-grams','Byte histogram features','PE header numerical features','CFG (Control Flow Graph)','Random Forest classifier','Gradient Boosting (XGBoost)','CNN on raw bytes (MalConv model)','RNN on API sequences','Graph Neural Networks','EMBER dataset / SOREL-20M','Cross-validation for malware','Evasion-aware training','Model explainability (SHAP)']},
+  ]},
+  {t:'Phishing Detection',topics:[
+    {n:'Email NLP & URL Analysis',l:I,d:'BERT email classification, urgency/brand detection, header forensics; URL lexical + WHOIS ML features',s:['Email header analysis','SPF/DKIM/DMARC verification','Display name vs email mismatch','TF-IDF + Logistic Regression','BERT email classifier','Urgency language detection','Brand impersonation detection','Homograph domain detection','URL lexical features','Domain length/subdomain count','WHOIS registration age','SSL cert age/issuer','Redirect chain analysis','VirusTotal / URLhaus API']},
+  ]},
+  {t:'Security Automation (SOAR)',topics:[
+    {n:'SOAR Platforms & Python',l:A,d:'XSOAR/Shuffle playbooks; Python webhook intake, threat intel enrichment, auto-triage pipelines',s:['SOAR concept and ROI','Palo Alto XSOAR','Splunk SOAR (Phantom)','Shuffle (open source)','TheHive + Cortex','Playbook design patterns','Trigger: SIEM alert webhook','Action: VirusTotal IP lookup','Action: isolate endpoint (EDR API)','Action: create Jira ticket','Auto-close low severity alerts','Human-in-the-loop approval','Python Flask webhook server','Threat intel API integration (OTX/MISP)']},
+  ]},
+  {t:'Adversarial AI',topics:[
+    {n:'Evasion & Poisoning Attacks',l:A,d:'Adversarial examples fooling classifiers at inference; data/backdoor poisoning corrupting training',s:['FGSM (Fast Gradient Sign Method)','PGD (Projected Gradient Descent)','Carlini-Wagner (C&W) attack','DeepFool','Adversarial patches','L-inf/L2/L0 perturbation norms','Black-box transfer attacks','Data poisoning (label flipping)','Backdoor / Trojan attack','Clean-label poisoning','Defense: adversarial training','Defense: input preprocessing','Spectral signatures (detection)','Activation clustering (detection)']},
+    {n:'Model Theft & Inversion',l:A,d:'Model extraction via queries, membership inference, model inversion to reconstruct training data',s:['Model extraction (equation-solving)','Decision boundary attack','Knockoff nets','Membership inference attack','Shadow model training','Model inversion attack','Attribute inference','Training data reconstruction','Differential Privacy (DP-SGD)','Knowledge distillation steal','Black-box API exploitation','Watermarking as defense','Model fingerprinting','IP protection challenges']},
+  ]},
+  {t:'LLM Security',topics:[
+    {n:'Prompt Injection & Jailbreaking',l:A,d:'Direct/indirect prompt injection, jailbreak techniques, guardrails, OWASP LLM Top 10',s:['Direct prompt injection','Indirect injection (via tool/RAG)','Jailbreaking role-play bypass','DAN (Do Anything Now)','Many-shot jailbreaking','Competing objectives','Base64/encoded payloads','Multilingual jailbreaks','NeMo Guardrails','Llama Guard classifier','LLM.guard library','System prompt hardening','OWASP LLM Top 10','Red teaming LLMs']},
+    {n:'Data Leakage & Agent Security',l:A,d:'Training data extraction, PII in outputs, RAG leakage; tool abuse, agent hijacking, audit logging',s:['Training data extraction attack','PII memorization in LLMs','Membership inference on LLMs','RAG knowledge leakage','System prompt extraction','Differential Privacy for LLMs','PII detection (Presidio)','GDPR / right to erasure','Tool call authorization','Least privilege for agent tools','Tool input/output validation','Agent hijacking via injection','Audit logging all tool calls','Human-in-the-loop checkpoints']},
+  ]},
+  {t:'Model Security & Governance',topics:[
+    {n:'Model Hardening & Watermarking',l:A,d:'Adversarial training, certified defenses, input validation, output filtering; neural watermarking for IP',s:['Adversarial training (AT)','Certified defenses (randomized smoothing)','Input preprocessing (feature squeezing)','Output filtering / content moderation','Ensemble defenses','Model versioning & rollback','Radioactive data watermark','Neural network fingerprinting','Statistical watermarking (LLM text)','Kirchenbauer LLM watermark','Watermark robustness testing','Model ownership verification','Rate limiting API calls','Security testing before deploy']},
+    {n:'AI Risk & Governance',l:A,d:'NIST AI RMF, EU AI Act, model cards, bias auditing, LIME/SHAP explainability, responsible AI',s:['NIST AI RMF (Map/Measure/Manage/Govern)','EU AI Act risk categories','High-risk AI systems','Model Cards (Google)','Datasheets for Datasets','Bias auditing','Fairness: demographic parity','Fairness: equalized odds','LIME (local surrogate)','SHAP values (Shapley)','Attention visualization','Grad-CAM (CNN)','Counterfactual explanations','Federated learning (privacy)']},
+  ]},
+]},
+];
+
+var capstones=[
+  {n:'Port Scanner',l:I,c:'#3b82f6',d:'Multi-threaded TCP/UDP scanner with banner grabbing, service fingerprinting, and HTML report generation using Python sockets.'},
+  {n:'Vulnerability Scanner',l:I,c:'#8b5cf6',d:'Combine Nmap service detection with CVE database lookups to auto-generate a vulnerability report per host.'},
+  {n:'Packet Analyzer',l:I,c:'#10b981',d:'Live network traffic capture and protocol dissection using Scapy — detect anomalies and export PCAP summaries.'},
+  {n:'Password Manager',l:I,c:'#f59e0b',d:'AES-256 encrypted vault with master password + PBKDF2/argon2 KDF, SQLite backend, CLI and Flask web UI.'},
+  {n:'SIEM Dashboard',l:A,c:'#ef4444',d:'Ingest syslog/Windows events via Python, normalize and index in Elasticsearch, visualize detections in Kibana.'},
+  {n:'Threat Intel Platform',l:A,c:'#f97316',d:'Aggregate IOCs from MISP/OTX/VirusTotal, enrich with WHOIS/ASN/geo data, store in PostgreSQL, expose REST API.'},
+  {n:'AWS Security Auditor',l:A,c:'#f97316',d:'Python + Boto3 tool auditing IAM policies, open S3 buckets, exposed Security Groups — outputs compliance report.'},
+  {n:'AI Chatbot',l:I,c:'#a78bfa',d:'RAG-powered chatbot with local Llama/Mistral, FAISS vector store, LangChain pipeline, FastAPI backend.'},
+  {n:'Fraud Detection System',l:A,c:'#34d399',d:'Real-time transaction anomaly detection with XGBoost + Isolation Forest, REST API, SHAP explanations per alert.'},
+  {n:'Malware Classifier',l:A,c:'#ef4444',d:'ML pipeline: static PE features + API call sequences, Random Forest + CNN model, auto-generate YARA rules.'},
+  {n:'Phishing Detector',l:A,c:'#f59e0b',d:'NLP pipeline on emails (BERT) + URL feature ML model, real-time FastAPI scoring, browser extension integration.'},
+  {n:'AI SOC Analyst',l:A,c:'#34d399',d:'LLM agent that ingests SIEM alerts, enriches IOCs via threat intel APIs, and drafts an incident response report.'},
+  {n:'AI Security Copilot',l:A,c:'#8b5cf6',d:'Security-domain LLM assistant with RAG over CVE/threat-report knowledge base, integrated into VS Code.'},
+  {n:'Threat Detection Engine',l:A,c:'#3b82f6',d:'Real-time ML engine on network flows: DGA detection, C2 beacon periodicity, lateral movement classification.'},
+  {n:'Enterprise Security Platform',l:A,c:'#a78bfa',d:'Full-stack: log ingestion → SIEM → ML anomaly detection → SOAR automation → executive dashboard with KPIs.'},
+];
+
+// ── BUILD ORDER BAR ──────────────────────────────────────────────
+var ob=document.getElementById('ob');
+domains.forEach(function(d){
+  var p=document.createElement('div');
+  p.className='order-pill';
+  p.innerHTML='<span class="num">'+d.order+'</span><i class="ti '+d.icon+'" style="color:'+d.color+';font-size:12px"></i>'+d.label.split(' ')[0];
+  ob.appendChild(p);
+});
+
+// ── BUILD DOMAIN BUTTONS ─────────────────────────────────────────
+var dg=document.getElementById('dg');
+var activeId=null;
+domains.forEach(function(d){
+  var total=d.sections.reduce(function(a,s){return a+s.topics.length;},0);
+  var subs=d.sections.reduce(function(a,s){return s.topics.reduce(function(b,t){return b+(t.s?t.s.length:0);},a);},0);
+  var btn=document.createElement('button');
+  btn.className='domain-btn';
+  btn.dataset.id=d.id;
+  btn.innerHTML='<span class="domain-icon"><i class="ti '+d.icon+'" style="color:'+d.color+';font-size:22px"></i></span>'
+    +'<div class="domain-label">'+d.label+'</div>'
+    +'<div class="domain-count">'+total+' topics &middot; '+subs+' concepts</div>';
+  btn.addEventListener('click',function(){togglePanel(d,btn);});
+  dg.appendChild(btn);
+});
+
+// ── BUILD CAPSTONE ───────────────────────────────────────────────
+(function(){
+  var cap=document.getElementById('capstone');
+  var cards=capstones.map(function(c,i){
+    return '<div class="cc" style="border-color:'+c.c+'33">'
+      +'<div class="cn" style="color:'+c.c+'">'+(i<9?'0':'')+(i+1)+'</div>'
+      +'<div class="cm">'+c.n+'</div>'
+      +'<span class="badge" style="background:'+LC[c.l].bg+';color:'+LC[c.l].c+'">'+c.l+'</span>'
+      +'<div class="cd">'+c.d+'</div>'
+      +'</div>';
+  }).join('');
+  cap.innerHTML='<div class="panel" style="border-color:#a78bfa44">'
+    +'<div class="ph"><span style="font-size:26px"><i class="ti ti-rocket" style="color:#a78bfa"></i></span>'
+    +'<div><div class="pt" style="color:#a78bfa">Final Capstone Projects</div>'
+    +'<div class="ps">'+capstones.length+' real-world builds — complete after mastering all 8 domains</div></div></div>'
+    +'<div class="cg">'+cards+'</div>'
+    +'</div>';
+})();
+
+// ── TOGGLE PANEL ─────────────────────────────────────────────────
+function togglePanel(d,btn){
+  var panels=document.getElementById('panels');
+  var existing=document.getElementById('panel-'+d.id);
+
+  // Reset all buttons
+  document.querySelectorAll('.domain-btn').forEach(function(b){
+    b.classList.remove('active');
+    b.style.borderColor='';
+    b.style.background='';
+  });
+
+  // If same domain clicked again — collapse
+  if(activeId===d.id){
+    if(existing)existing.remove();
+    activeId=null;
+    return;
+  }
+
+  // Remove any existing open panel
+  if(activeId){
+    var old=document.getElementById('panel-'+activeId);
+    if(old)old.remove();
+  }
+
+  activeId=d.id;
+  btn.classList.add('active');
+  btn.style.borderColor=d.color;
+  btn.style.background=d.bg;
+
+  // Count totals
+  var total=d.sections.reduce(function(a,s){return a+s.topics.length;},0);
+  var subs=d.sections.reduce(function(a,s){return s.topics.reduce(function(b,t){return b+(t.s?t.s.length:0);},a);},0);
+
+  var html='<div class="ph">'
+    +'<span style="font-size:28px"><i class="ti '+d.icon+'" style="color:'+d.color+'"></i></span>'
+    +'<div><div class="pt" style="color:'+d.color+'">'+d.label+'</div>'
+    +'<div class="ps">'+d.sections.length+' sections &nbsp;&middot;&nbsp; '+total+' topics &nbsp;&middot;&nbsp; '+subs+' detailed concepts — click any section to study</div></div>'
+    +'</div>';
+
+  d.sections.forEach(function(sec){
+    html+='<div class="sec-label">'+sec.t+'</div><div class="tg">';
+    sec.topics.forEach(function(t){
+      var lc=LC[t.l]||LC.Beginner;
+      var tags=t.s?t.s.map(function(s){return '<span class="st">'+s+'</span>';}).join(''):'';
+      html+='<div class="tc">'
+        +'<span class="badge" style="background:'+lc.bg+';color:'+lc.c+'">'+t.l+'</span>'
+        +'<div class="tn">'+t.n+'</div>'
+        +'<div class="td">'+t.d+'</div>'
+        +(tags?'<div class="subtags">'+tags+'</div>':'')
+        +'</div>';
+    });
+    html+='</div>';
+  });
+
+  var panel=document.createElement('div');
+  panel.className='panel';
+  panel.id='panel-'+d.id;
+  panel.style.borderColor=d.color+'44';
+  panel.innerHTML=html;
+  panels.innerHTML='';
+  panels.appendChild(panel);
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body>
+</html>
